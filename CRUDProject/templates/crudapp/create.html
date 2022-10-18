@@ -1,0 +1,60 @@
+{% extends 'index.html' %}
+{% block soumya %}
+    <form action="{% url 'save' %}" method='post' enctype='multipart/form-data'>
+         {% csrf_token %}
+     <table align='center' border='2'>
+        <tr>
+            <th><h1>Employee Record</h1></th>
+        </tr>
+        <tr>
+            <th>
+                IDNO:<input type='number' placeholder='idno' required name='t1'>
+            </th>
+        </tr>
+        <tr>
+            <th>
+                USERNAME:<input type='text' placeholder='username' required name='t2'>
+            </th>
+        </tr>
+        <tr>
+            <th>
+                CONTACT:<input type='number' placeholder='contactno' required name='t3'>
+            </th>
+        </tr>
+        <tr>
+            <th>
+                EMAIL:<input type='email' placeholder='email' required name='t4'>
+            </th>
+        </tr>
+        <tr>
+            <th>
+                FEES:<input type='number' placeholder='fees' required name='t5'>
+            </th>
+        </tr>
+        <tr>
+            <th>
+                PASSWORD:<input type='password' placeholder='password' required name='t6'>
+            </th>
+        </tr>
+        <tr>
+            <th>
+                IMAGE:<input type='file' name='t7'>
+            </th>
+        </tr>
+        <tr>
+            <th>
+                <center><button type='submit'>save</button></center>
+            </th>
+        </tr>
+    </table>
+</form>
+{% if messages %}
+    {% for x in messages %}
+      <h1>{{x}}</h1>
+
+    {% endfor %}
+
+{% endif %}
+
+
+{% endblock %}

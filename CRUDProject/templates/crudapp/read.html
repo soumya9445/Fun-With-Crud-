@@ -1,0 +1,49 @@
+{% extends 'index.html' %}
+{% block soumya %}
+{% load static %}
+    <table align='center' border='2'>
+        <tr>
+            <th>Employee Idno</th>
+            <th>Employee Name</th>
+            <th>Employee Contact</th>
+            <th>Employee Fees</th>
+            <th>Employee Email</th>
+            <th>Employee Password</th>
+            <th>Employee Photo</th>
+            <th>UPDATE</th>
+            <th>DELETE</th>
+        </tr>
+        {% for x in data %}    
+        <tr>
+            <th>{{x.id}}</th>
+            <th>{{x.name}}</th>
+            <th>{{x.contact}}</th>
+            <th>{{x.fees}}</th>
+            <th>{{x.emailid}}</th>
+            <th>{{x.password}}</th>
+            <th>
+                <img src="{{x.photo.url}}" width='200' px height='100' px>
+            </th>
+            <th>
+                <a href="{% url 'update' %}?sid={{x.id}}">
+                    UPDATE
+                </a>    
+            </th>
+            <th>
+                <a href="{% url 'delete' %}?sid={{x.id}}">
+                    DELETE
+                </a>    
+            </th>
+        </tr>
+        {% endfor %}
+
+        {% if messages %}         
+        {% for x in messages %}
+          <h1>{{x}}</h1>
+   
+        {% endfor %}
+   
+   {% endif %}        
+
+
+{% endblock %}

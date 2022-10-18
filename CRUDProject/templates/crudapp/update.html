@@ -1,0 +1,52 @@
+{% extends 'index.html' %}
+{% block soumya %}
+{% load static %}
+    <form action="{% url 'update_record' %}" method='post' enctype='multipart/form-data'>
+         {% csrf_token %}
+     <table align='center' border='2'>
+        <tr>
+            <th><h1>Employee Record</h1></th>
+        </tr>
+        <tr>
+            <th>
+                IDNO:<input type='number' readonly  value="{{data.id}}" name='t1'>
+            </th>
+        </tr>
+        <tr>
+            <th>
+                USERNAME:<input type='text' value="{{data.name}}" name='t2'>
+            </th>
+        </tr>
+        <tr>
+            <th>
+                CONTACT:<input type='number' value="{{data.contact}}" name='t3'>
+            </th>
+        </tr>
+        <tr>
+            <th>
+                EMAIL:<input type='email' value="{{data.emailid}}" name='t4'>
+            </th>
+        </tr>
+        <tr>
+            <th>
+                FEES:<input type='number'value="{{data.fees}}" name='t5'>
+            </th>
+        </tr>
+        <tr>
+            <th>
+                PASSWORD:<input type='password' value="{{data.password}}" name='t6'>
+            </th>
+        </tr>
+        <tr>
+            <th>
+                IMAGE:<input type='file' value="{{data.photo}}" name='t7'>
+            </th>
+        </tr>
+        <tr>
+            <th>
+                <center><button type='submit'>save</button></center>
+            </th>
+        </tr>
+    </table>
+</form>
+{% endblock %}

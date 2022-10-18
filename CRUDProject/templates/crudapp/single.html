@@ -1,0 +1,14 @@
+{% extends  'index.html' %}
+
+{% block soumya %}
+   <form action="{% url 'search_one' %}" method='post'>
+       {% csrf_token %}
+        Enter Employee IDNO:
+          <input type='number' name='s1'>
+             <button type='submit'>search</button>
+   </form>     
+   {% if error %}    
+      <h1>{{error}}</h1>
+   {% endif %}
+
+{% endblock %}

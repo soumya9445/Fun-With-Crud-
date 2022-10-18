@@ -1,0 +1,52 @@
+{% load static %}
+<html>
+    <head>
+        <link rel='stylesheet' href="{% static 'css/one.css' %}">
+    </head>
+    <body bgcolor='red'>
+        <table align='center' border='0' width='900' px>
+            <tr>
+                <th colspan='4'>
+                   <h1 class='one'>Employee Details</h1>
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    
+                <a href="{% url 'index' %}">
+                    HOME
+                </a>
+                </th>
+                <th>
+                    <a href="{% url 'create' %}">
+                        CREATE
+                    </a>    
+                </th>
+
+                <th>
+                    <a href="{% url 'read' %}">
+                        READ
+                    </a>    
+                </th>
+                <th>
+                    <a href="{% url 'single_record' %}">
+                        SINGLEDATA
+                    </a>    
+                </th>
+                <th>
+                    <a href="{% url 'login' %}">
+                        LOGIN
+                    </a>    
+                </th>
+                
+                
+                
+            </tr>  
+            
+                      
+        </table>
+        {% block soumya %}
+
+        {% endblock %}
+    </body>
+</table>                   
